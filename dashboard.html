@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Dashboard</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>🎓 College Complaint Management System</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="login.html" onclick="logout()">Logout</a>
+        </nav>
+    </header>
+
+
+    <section class="dashboard">
+
+        <div class="welcome-card">
+
+            <h1>Welcome, Student! 👋</h1>
+
+            <p>
+                Welcome to the College Complaint Management System.
+            </p>
+            <div class="complaint-summary">
+    <h2>📋 Complaint Summary</h2>
+    <p id="complaintCount">Total Complaints: 0</p>
+</div>
+            <div class="dashboard-buttons">
+
+                <a href="complaint.html" class="dashboard-btn">
+                    📝 Submit Complaint
+                </a>
+                <a href="track.html" class="dashboard-btn">
+                    🔍 Track Complaint
+                </a>
+                <a href="profile.html" class="dashboard-btn">
+                    👤 My Profile
+                </a>
+                <a href="index.html" class="dashboard-btn">
+        🏠 Home
+    </a>
+
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <script>
+        function logout() {
+            localStorage.removeItem("student");
+        }
+    </script>
+<script>
+const data = localStorage.getItem("complaints");
+
+if (data) {
+    const complaints = JSON.parse(data);
+
+    document.getElementById("complaintCount").textContent =
+        "Total Complaints: " + complaints.length;
+} else {
+    document.getElementById("complaintCount").textContent =
+        "Total Complaints: 0";
+}
+</script>
+</body>
+</html>

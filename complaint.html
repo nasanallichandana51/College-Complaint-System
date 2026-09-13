@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Submit Complaint</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>🎓 College Complaint Management System</h2>
+
+        <nav>
+            <a href="dashboard.html">Dashboard</a>
+            <a href="index.html">Home</a>
+        </nav>
+    </header>
+
+
+    <section class="complaint-section">
+
+        <div class="complaint-card">
+
+            <h1>📝 Submit Complaint</h1>
+
+            <form id="complaintForm">
+
+                <label>Student Name</label>
+                <input type="text"
+                       id="studentName"
+                       placeholder="Enter your name"
+                       required>
+                <label>Contact Number</label>
+<input type="tel" id="contact" placeholder="Enter your contact number" required>
+
+
+                <label>Complaint Category</label>
+
+                <select id="category" required>
+
+                    <option value="">Select Category</option>
+
+                    <option>Academic</option>
+                    <option>Hostel</option>
+                    <option>Library</option>
+                    <option>Computer Lab</option>
+                    <option>Classroom</option>
+                    <option>Transport</option>
+                    <option>Other</option>
+
+                </select>
+
+
+                <label>Complaint Title</label>
+
+                <input type="text"
+                       id="title"
+                       placeholder="Enter complaint title"
+                       required>
+
+
+                <label>Department</label>
+
+                <select id="department" required>
+
+                    <option value="">Select Department</option>
+
+                    <option>IT</option>
+                    <option>CSE</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>Mechanical</option>
+                    <option>Civil</option>
+
+                </select>
+
+
+                <label>Complaint Description</label>
+
+                <textarea id="description"
+                          placeholder="Explain your complaint"
+                          rows="5"
+                          required></textarea>
+
+
+                <label>Priority</label>
+
+                <select id="priority" required>
+
+                    <option value="">Select Priority</option>
+                    <option>Low</option>
+                    <option>Medium</option>
+                    <option>High</option>
+
+                </select>
+
+
+                <button type="submit">
+                    Submit Complaint
+                </button>
+
+            </form>
+
+        </div>
+
+    </section>
+
+
+    <script src="js/complaint.js"></script>
+
+</body>
+</html>

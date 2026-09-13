@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Profile</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h2>🎓 College Complaint Management System</h2>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<section class="profile-section">
+
+    <div class="profile-card">
+
+        <h1>👤 My Profile</h1>
+
+        <div id="profileDetails">
+        </div>
+
+    </div>
+
+</section>
+
+<script>
+
+const data = localStorage.getItem("student");
+
+const profile = document.getElementById("profileDetails");
+
+if (data) {
+
+    const student = JSON.parse(data);
+
+    profile.innerHTML = `
+        <p><strong>Full Name:</strong> ${student.name}</p>
+
+        <p><strong>Email:</strong> ${student.email}</p>
+
+        <p><strong>Student ID:</strong> ${student.studentId || "Not provided"}</p>
+
+        <p><strong>Department:</strong> ${student.department}</p>
+    `;
+
+} else {
+
+    profile.innerHTML = `
+        <p>No student information found.</p>
+        <a href="register.html">Register Now</a>
+    `;
+
+}
+
+</script>
+
+</body>
+</html>

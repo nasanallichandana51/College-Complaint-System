@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Complaint</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header>
+    <h2>🎓 College Complaint Management System</h2>
+
+    <nav>
+        <a href="dashboard.html">Dashboard</a>
+        <a href="index.html">Home</a>
+    </nav>
+</header>
+
+<section class="track-section">
+
+    <div class="track-card">
+
+        <h1>📋 My Complaint</h1>
+
+        <div id="complaintDetails" class="card-details" aria-live="polite">
+            <!-- Complaint details will appear here -->
+        </div>
+<a href="dashboard.html" class="back-btn">⬅️ Back to Dashboard</a>
+        <button onclick="clearComplaint()" class="clear-btn">
+    🗑️ Clear Complaint
+</button>
+    </div>
+
+</section>
+
+<script>
+
+const data = localStorage.getItem("complaints");
+
+const details = document.getElementById("complaintDetails");
+
+if (data) {
+
+    const complaints = JSON.parse(data);
+
+    if (complaints.length > 0) {
+
+        const complaint = complaints[complaints.length - 1];
+
+        details.innerHTML = `
+            <p><strong>Complaint ID:</strong> ${complaint.complaintId}</p>
+
+            <p><strong>Student Name:</strong> ${complaint.studentName}</p>
+
+            <p><strong>Contact Number:</strong> ${complaint.contact}</p>
+
+            <p><strong>Category:</strong> ${complaint.category}</p>
+
+            <p><strong>Complaint Title:</strong> ${complaint.title}</p>
+
+            <p><strong>Department:</strong> ${complaint.department}</p>
+
+            <p><strong>Description:</strong> ${complaint.description}</p>
+
+            <p><strong>Priority:</strong> ${complaint.priority}</p>
+
+            <p><strong>Status:</strong>
+                <span class="status">${complaint.status}</span>
+            </p>
+        `;
+
+    } else {
+
+        details.innerHTML = '<p>No complaint found.</p>';
+
+    }
+
+} else {
+
+    details.innerHTML = `
+        <p>No complaint found.</p>
+        <a href="complaint.html">Submit a Complaint</a>
+    `;
+
+}
+
+
+function clearComplaint() {
+
+    localStorage.removeItem("complaints");
+
+    alert("Complaint cleared successfully!");
+
+    window.location.reload();
+
+}
+
+</script>

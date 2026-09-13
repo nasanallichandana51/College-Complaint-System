@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Student Registration</title>
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+    <header>
+        <h2>🎓 College Complaint Management System</h2>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="login.html">Login</a>
+            <a href="register.html">Register</a>
+        </nav>
+    </header>
+
+
+    <section class="register-section">
+
+        <div class="register-card">
+
+            <h1>Student Registration</h1>
+
+            <form>
+
+                <label>Full Name</label>
+                <input type="text" placeholder="Enter your full name" required>
+
+                <label>Email Address</label>
+                <input type="email" placeholder="Enter your email" required>
+
+                <label>Password</label>
+                <input type="password" placeholder="Enter password" required>
+
+                <label>Department</label>
+                <select required>
+                    <option value="">Select Department</option>
+                    <option>IT</option>
+                    <option>CSE</option>
+                    <option>ECE</option>
+                    <option>EEE</option>
+                    <option>Mechanical</option>
+                    <option>Civil</option>
+                </select>
+
+                <label>Year</label>
+                <select required>
+                    <option value="">Select Year</option>
+                    <option>1st Year</option>
+                    <option>2nd Year</option>
+                    <option>3rd Year</option>
+                    <option>4th Year</option>
+                </select>
+
+                <button type="submit">Register</button>
+
+            </form>
+
+            <p>
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+        </div>
+
+    </section>
+<script src="js/register.js"></script>
+</body>
+</html>
